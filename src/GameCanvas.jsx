@@ -16,7 +16,7 @@ const GameCanvas = () => {
                 default: 'arcade',
                 arcade: {
                     gravity: { y: 0 },
-                    debug: true
+                    debug: false
                 }
             },
             scene: {
@@ -30,15 +30,24 @@ const GameCanvas = () => {
         let cursors;
         let spaceKey;
 
+        let house1, house2, house3, house4;
+
+
         const game = new Phaser.Game(config);
 
         function preload() {
-            this.load.spritesheet('anushree', spriteSheet, {
+            this.load.spritesheet('anu', spriteSheet, {
                 frameWidth: 48,
                 frameHeight: 98
             });
 
-            // 🧱 Load the Tiled JSON map and tilesets
+            this.load.spritesheet('house_anim', '/assets/tilesets/Houses.png', {
+                frameWidth: 150,
+                frameHeight: 150
+            });
+
+
+
             this.load.tilemapTiledJSON('map', '/assets/map/map.json');
             this.load.image('grass', '/assets/tilesets/forest_demo_terrain.png');
             this.load.image('tree', '/assets/tilesets/forest_demo_objects.png');
@@ -63,64 +72,114 @@ const GameCanvas = () => {
 
             console.log(map.layers);
 
-
-
             spaceKey = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE);
             this.anims.create({
                 key: 'down',
-                frames: this.anims.generateFrameNumbers('anushree', { start: 0, end: 2 }),
+                frames: this.anims.generateFrameNumbers('anu', { start: 0, end: 2 }),
                 frameRate: 10,
                 repeat: -1
             });
 
             this.anims.create({
                 key: 'left',
-                frames: this.anims.generateFrameNumbers('anushree', { start: 12, end: 14 }),
+                frames: this.anims.generateFrameNumbers('anu', { start: 12, end: 14 }),
                 frameRate: 10,
                 repeat: -1
             });
 
             this.anims.create({
                 key: 'right',
-                frames: this.anims.generateFrameNumbers('anushree', { start: 24, end: 26 }),
+                frames: this.anims.generateFrameNumbers('anu', { start: 24, end: 26 }),
                 frameRate: 10,
                 repeat: -1
             });
 
             this.anims.create({
                 key: 'up',
-                frames: this.anims.generateFrameNumbers('anushree', { start: 36, end: 38 }),
+                frames: this.anims.generateFrameNumbers('anu', { start: 36, end: 38 }),
                 frameRate: 10,
                 repeat: -1
             });
 
             this.anims.create({
                 key: 'select',
-                frames: this.anims.generateFrameNumbers('anushree', { start: 79, end: 80 }),
+                frames: this.anims.generateFrameNumbers('anu', { start: 79, end: 80 }),
                 frameRate: 8,
                 repeat: 0
             });
 
-            // this.add.image(10, 10, 'background').setOrigin(0).setScrollFactor(0);
 
-            player = this.physics.add.sprite(780, 350, 'anushree').setScale(0.7);
+            player = this.physics.add.sprite(780, 400, 'anu').setScale(0.7);
+
+            const topBoundary = this.add.rectangle(
+                map.widthInPixels / 2,
+                300,
+                map.widthInPixels,
+                10,
+                0xff0000,
+                0
+            );
+            this.physics.add.existing(topBoundary, true);
+
+            this.physics.add.collider(player, topBoundary);
+
+            this.physics.world.setBounds(0, 0, map.widthInPixels, map.heightInPixels);
+
+            player.setCollideWorldBounds(true);
+
             cursors = this.input.keyboard.createCursorKeys();
 
             console.log("Map loaded:", map);
             console.log("Player:", player);
 
-            this.cameras.main.scrollX = 25; // Move camera right by 100px
-            this.cameras.main.scrollY = 5000;  // Move camera down by 50px
+            this.cameras.main.scrollX = 25;
+            this.cameras.main.scrollY = 5000;
 
 
-            // this.cameras.main.startFollow(player);
+            this.cameras.main.startFollow(player, true, 0.1, 0.1);
             this.cameras.main.setBounds(0, 0, map.widthInPixels, map.heightInPixels);
 
-            this.cameras.main.scrollX = 300; // Shift right
-            this.cameras.main.scrollY = -5; // Shift down
+            this.cameras.main.scrollX = 300;
+            this.cameras.main.scrollY = -5;
 
-            this.cameras.main.setZoom(7); // Try 2x zoom (1 = default)
+            this.cameras.main.setZoom(7);
 
+
+            ////////////////
+
+            house1 = this.physics.add.sprite(875, 337, 'house_anim').setImmovable(true).setScale(1);
+            house2 = this.physics.add.sprite(219, 320, 'house_anim').setImmovable(true).setScale(1);
+            house3 = this.physics.add.sprite(507, 331, 'house_anim').setImmovable(true).setScale(1);
+            house4 = this.physics.add.sprite(395, 423, 'house_anim').setImmovable(true).setScale(1);
+
+            this.anims.create({
+                key: 'house1_anim',
+                frames: this.anims.generateFrameNumbers('house_anim', { start: 375, end: 385 }),
+                frameRate: 9,
+                repeat: -1
+            });
+
+            this.anims.create({
+                key: 'house2_anim',
+                frames: this.anims.generateFrameNumbers('house_anim', { start: 330, end: 341 }),
+                frameRate: 9,
+                repeat: -1
+            });
+
+            this.anims.create({
+                key: 'house3_anim',
+                frames: this.anims.generateFrameNumbers('house_anim', { start: 1, end: 10 }),
+                frameRate: 9,
+                repeat: -1
+            });
+
+
+            this.anims.create({
+                key: 'house4_anim',
+                frames: this.anims.generateFrameNumbers('house_anim', { start: 30, end: 40 }),
+                frameRate: 9,
+                repeat: -1
+            });
 
         }
 
@@ -149,7 +208,36 @@ const GameCanvas = () => {
 
             console.log(`Player position: x=${player.x.toFixed(2)}, y=${player.y.toFixed(2)}`);
 
+            const houses = [
+                { sprite: house1, anim: 'house1_anim', baseFrame: 375 },
+                { sprite: house2, anim: 'house2_anim', baseFrame: 330 },
+                { sprite: house3, anim: 'house3_anim', baseFrame: 0 },
+                { sprite: house4, anim: 'house4_anim', baseFrame: 30 }
+            ];
+
+            let closest = null;
+            let minDistance = 120;
+
+            houses.forEach(house => {
+                const dist = Phaser.Math.Distance.Between(player.x, player.y, house.sprite.x, house.sprite.y);
+                if (dist < minDistance) {
+                    closest = house;
+                    minDistance = dist;
+                }
+            });
+
+            houses.forEach(house => {
+                if (house === closest) {
+                    if (!house.sprite.anims.isPlaying) {
+                        house.sprite.anims.play(house.anim);
+                    }
+                } else {
+                    house.sprite.anims.stop();
+                    house.sprite.setFrame(house.baseFrame);
+                }
+            });
         }
+
 
         return () => {
             game.destroy(true);
