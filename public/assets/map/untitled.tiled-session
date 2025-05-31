@@ -1,15 +1,18 @@
 {
-    "Map/SizeTest": {
-        "height": 4300,
-        "width": 2
-    },
     "activeFile": "",
     "expandedProjectPaths": [
     ],
     "file.lastUsedOpenFilter": "All Files (*)",
     "fileStates": {
+        "": {
+            "scaleInDock": 1
+        },
         "/Users/anuumak/Desktop/gamefolio/public/assets/tilesets/grass.tsx": {
-            "scaleInDock": 1,
+            "scaleInDock": 0.23,
+            "scaleInEditor": 1
+        },
+        "/Users/anuumak/Desktop/gamefolio/public/assets/tilesets/house.tsx": {
+            "scaleInDock": 0.23,
             "scaleInEditor": 1
         },
         "/Users/anuumak/Desktop/gamefolio/public/assets/tilesets/sky.tsx": {
@@ -17,29 +20,29 @@
             "scaleInEditor": 1
         },
         "/Users/anuumak/Desktop/gamefolio/public/assets/tilesets/tree.tsx": {
-            "scaleInDock": 1,
+            "scaleInDock": 0.23,
             "scaleInEditor": 1
+        },
+        "map.tmx#sky": {
+            "scaleInEditor": 0.4943
         }
     },
     "last.exportedFilePath": "/Users/anuumak/Desktop/gamefolio/public/assets/map",
     "last.imagePath": "/Users/anuumak/Desktop/gamefolio/public/assets/tilesets",
-    "map.height": 30,
+    "lastUsedTilesetExportFilter": "JSON tileset files (*.tsj *.json)",
     "map.lastUsedExportFilter": "JSON map files (*.tmj *.json)",
-    "map.lastUsedFormat": "tmx",
-    "map.tileHeight": 16,
-    "map.tileWidth": 16,
-    "map.width": 60,
     "openFiles": [
     ],
     "project": "untitled.tiled-project",
     "recentFiles": [
         "/Users/anuumak/Desktop/gamefolio/public/assets/tilesets/sky.tsx",
         "/Users/anuumak/Desktop/gamefolio/public/assets/tilesets/grass.tsx",
+        "/Users/anuumak/Desktop/gamefolio/public/assets/tilesets/house.tsx",
         "/Users/anuumak/Desktop/gamefolio/public/assets/tilesets/tree.tsx"
     ],
     "tileset.lastUsedFormat": "tsx",
     "tileset.tileSize": {
-        "height": 200,
-        "width": 200
+        "height": 16,
+        "width": 16
     }
 }

@@ -8,8 +8,9 @@ const GameCanvas = () => {
         const config = {
             backgroundColor: '#1e1e2f',
             type: Phaser.AUTO,
-            width: '100%',
-            height: '100%',
+            width: window.innerWidth,
+            height: window.innerHeight,
+
             parent: 'game-container',
             physics: {
                 default: 'arcade',
@@ -39,26 +40,30 @@ const GameCanvas = () => {
 
             // 🧱 Load the Tiled JSON map and tilesets
             this.load.tilemapTiledJSON('map', '/assets/map/map.json');
-            this.load.image('grass', '/assets/tilesets/grass.png');
-            this.load.image('tree', '/assets/tilesets/tree.png');
-            this.load.image('house', '/assets/tilesets/house.png');
-            this.load.image('sky', '/assets/tilesets/sky.png');
+            this.load.image('grass', '/assets/tilesets/forest_demo_terrain.png');
+            this.load.image('tree', '/assets/tilesets/forest_demo_objects.png');
+            this.load.image('house', '/assets/tilesets/Houses.png');
+            this.load.image('sky', '/assets/tilesets/dawnbackground.png');
         }
 
 
 
         function create() {
             const map = this.make.tilemap({ key: 'map' });
+
             const tilesetSky = map.addTilesetImage('sky', 'sky');
             const tilesetGrass = map.addTilesetImage('grass', 'grass');
             const tilesetTree = map.addTilesetImage('tree', 'tree');
             const tilesetHouse = map.addTilesetImage('house', 'house');
 
-            // ✅ Order matters: render from back (sky) to front
             map.createLayer('sky', tilesetSky, 0, 0);
             map.createLayer('grass', tilesetGrass, 0, 0);
             map.createLayer('tree', tilesetTree, 0, 0);
             map.createLayer('house', tilesetHouse, 0, 0);
+
+            console.log(map.layers);
+
+
 
             spaceKey = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE);
             this.anims.create({
@@ -98,8 +103,24 @@ const GameCanvas = () => {
 
             // this.add.image(10, 10, 'background').setOrigin(0).setScrollFactor(0);
 
-            player = this.physics.add.sprite(1450, 900, 'anushree').setScale(2);
+            player = this.physics.add.sprite(780, 350, 'anushree').setScale(0.7);
             cursors = this.input.keyboard.createCursorKeys();
+
+            console.log("Map loaded:", map);
+            console.log("Player:", player);
+
+            this.cameras.main.scrollX = 25; // Move camera right by 100px
+            this.cameras.main.scrollY = 5000;  // Move camera down by 50px
+
+
+            // this.cameras.main.startFollow(player);
+            this.cameras.main.setBounds(0, 0, map.widthInPixels, map.heightInPixels);
+
+            this.cameras.main.scrollX = 300; // Shift right
+            this.cameras.main.scrollY = -5; // Shift down
+
+            this.cameras.main.setZoom(7); // Try 2x zoom (1 = default)
+
 
         }
 
@@ -125,6 +146,9 @@ const GameCanvas = () => {
             if (Phaser.Input.Keyboard.JustDown(spaceKey)) {
                 player.anims.play('select', true);
             }
+
+            console.log(`Player position: x=${player.x.toFixed(2)}, y=${player.y.toFixed(2)}`);
+
         }
 
         return () => {
