@@ -1,0 +1,49 @@
+{
+    "activeFile": "/Users/anuumak/Desktop/gamefolio/public/assets/tilesets/water_land.tsx",
+    "expandedProjectPaths": [
+    ],
+    "fileStates": {
+        "/Users/anuumak/Desktop/gamefolio/public/assets/tilesets/floor.tsx": {
+            "scaleInDock": 1.2638,
+            "scaleInEditor": 2.36
+        },
+        "/Users/anuumak/Desktop/gamefolio/public/assets/tilesets/green_furniture.tsx": {
+            "scaleInDock": 1.2287,
+            "scaleInEditor": 1.8677
+        },
+        "/Users/anuumak/Desktop/gamefolio/public/assets/tilesets/items.tsx": {
+            "scaleInDock": 2.1657,
+            "scaleInEditor": 3.0699
+        },
+        "/Users/anuumak/Desktop/gamefolio/public/assets/tilesets/water_land.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "/Users/anuumak/Desktop/gamefolio/public/assets/tilesets/windows.tsx": {
+            "scaleInDock": 1.0578,
+            "scaleInEditor": 1.2886
+        },
+        "map.tmx": {
+            "scale": 1.5341,
+            "selectedLayer": 5,
+            "viewCenter": {
+                "x": 158.0731373443713,
+                "y": 72.35512678443388
+            }
+        }
+    },
+    "last.imagePath": "/Users/anuumak/Downloads/Pixel Lands Forest Demo",
+    "openFiles": [
+        "/Users/anuumak/Desktop/gamefolio/public/assets/tilesets/water_land.tsx"
+    ],
+    "project": "",
+    "recentFiles": [
+        "/Users/anuumak/Desktop/gamefolio/public/assets/tilesets/water_land.tsx",
+        "/Users/anuumak/Desktop/gamefolio/public/assets/tilesets/windows.tsx",
+        "/Users/anuumak/Desktop/gamefolio/public/assets/tilesets/items.tsx",
+        "/Users/anuumak/Desktop/gamefolio/public/assets/tilesets/green_furniture.tsx",
+        "/Users/anuumak/Desktop/gamefolio/public/assets/tilesets/floor.tsx",
+        "map.tmx"
+    ],
+    "tileset.lastUsedFormat": "tsx"
+}

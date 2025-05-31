@@ -1,0 +1,45 @@
+{
+    "Map/SizeTest": {
+        "height": 4300,
+        "width": 2
+    },
+    "activeFile": "",
+    "expandedProjectPaths": [
+    ],
+    "file.lastUsedOpenFilter": "All Files (*)",
+    "fileStates": {
+        "/Users/anuumak/Desktop/gamefolio/public/assets/tilesets/grass.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "/Users/anuumak/Desktop/gamefolio/public/assets/tilesets/sky.tsx": {
+            "scaleInDock": 0.2559,
+            "scaleInEditor": 1
+        },
+        "/Users/anuumak/Desktop/gamefolio/public/assets/tilesets/tree.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        }
+    },
+    "last.exportedFilePath": "/Users/anuumak/Desktop/gamefolio/public/assets/map",
+    "last.imagePath": "/Users/anuumak/Desktop/gamefolio/public/assets/tilesets",
+    "map.height": 30,
+    "map.lastUsedExportFilter": "JSON map files (*.tmj *.json)",
+    "map.lastUsedFormat": "tmx",
+    "map.tileHeight": 16,
+    "map.tileWidth": 16,
+    "map.width": 60,
+    "openFiles": [
+    ],
+    "project": "untitled.tiled-project",
+    "recentFiles": [
+        "/Users/anuumak/Desktop/gamefolio/public/assets/tilesets/sky.tsx",
+        "/Users/anuumak/Desktop/gamefolio/public/assets/tilesets/grass.tsx",
+        "/Users/anuumak/Desktop/gamefolio/public/assets/tilesets/tree.tsx"
+    ],
+    "tileset.lastUsedFormat": "tsx",
+    "tileset.tileSize": {
+        "height": 200,
+        "width": 200
+    }
+}
