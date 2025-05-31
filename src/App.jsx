@@ -1,16 +1,21 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
-import './App.css'
+import * as Phaser from 'phaser';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import GameCanvas from './GameCanvas';
+import RoomScene from './RoomScene';
+import './App.css';
 
 function App() {
   return (
-    <div className="h-screen w-screen overflow-hidden m-0 p-0">
-      <GameCanvas />
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<GameCanvas />} />
+        <Route path="/room" element={<RoomScene />} />
+      </Routes>
+    </Router>
   );
 }
 
-
-export default App
+export default App;

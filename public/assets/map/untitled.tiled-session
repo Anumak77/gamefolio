@@ -1,11 +1,22 @@
 {
-    "activeFile": "",
+    "Map/SizeTest": {
+        "height": 4300,
+        "width": 2
+    },
+    "activeFile": "map.tmx",
     "expandedProjectPaths": [
     ],
-    "file.lastUsedOpenFilter": "All Files (*)",
     "fileStates": {
         "": {
             "scaleInDock": 1
+        },
+        "/Users/anuumak/Desktop/gamefolio/public/assets/tilesets/floor.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 2.0221
+        },
+        "/Users/anuumak/Desktop/gamefolio/public/assets/tilesets/furniture.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1.5045
         },
         "/Users/anuumak/Desktop/gamefolio/public/assets/tilesets/grass.tsx": {
             "scaleInDock": 0.23,
@@ -19,9 +30,21 @@
             "scaleInDock": 0.2559,
             "scaleInEditor": 1
         },
+        "/Users/anuumak/Desktop/gamefolio/public/assets/tilesets/small_furniture.tsx": {
+            "scaleInDock": 2.4701,
+            "scaleInEditor": 1
+        },
         "/Users/anuumak/Desktop/gamefolio/public/assets/tilesets/tree.tsx": {
             "scaleInDock": 0.23,
             "scaleInEditor": 1
+        },
+        "map.tmx": {
+            "scale": 0.4966,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 352.39629480467187,
+                "y": 169.15022150624247
+            }
         },
         "map.tmx#sky": {
             "scaleInEditor": 0.4943
@@ -29,12 +52,21 @@
     },
     "last.exportedFilePath": "/Users/anuumak/Desktop/gamefolio/public/assets/map",
     "last.imagePath": "/Users/anuumak/Desktop/gamefolio/public/assets/tilesets",
-    "lastUsedTilesetExportFilter": "JSON tileset files (*.tsj *.json)",
+    "map.height": 30,
     "map.lastUsedExportFilter": "JSON map files (*.tmj *.json)",
+    "map.lastUsedFormat": "tmx",
+    "map.tileHeight": 16,
+    "map.tileWidth": 16,
+    "map.width": 150,
     "openFiles": [
+        "map.tmx"
     ],
-    "project": "untitled.tiled-project",
+    "project": "",
     "recentFiles": [
+        "/Users/anuumak/Desktop/gamefolio/public/assets/tilesets/small_furniture.tsx",
+        "/Users/anuumak/Desktop/gamefolio/public/assets/tilesets/furniture.tsx",
+        "/Users/anuumak/Desktop/gamefolio/public/assets/tilesets/floor.tsx",
+        "map.tmx",
         "/Users/anuumak/Desktop/gamefolio/public/assets/tilesets/sky.tsx",
         "/Users/anuumak/Desktop/gamefolio/public/assets/tilesets/grass.tsx",
         "/Users/anuumak/Desktop/gamefolio/public/assets/tilesets/house.tsx",

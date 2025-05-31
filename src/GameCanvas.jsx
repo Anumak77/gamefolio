@@ -1,12 +1,16 @@
 import { useEffect } from 'react';
-import Phaser from 'phaser';
+import * as Phaser from 'phaser';
+
+import { useNavigate } from 'react-router-dom';
 import spriteSheet from './assets/sprite_sheet.png';
 
 const GameCanvas = () => {
+    const navigate = useNavigate();
 
     useEffect(() => {
+
         const config = {
-            backgroundColor: '#1e1e2f',
+            backgroundColor: '#202020',
             type: Phaser.AUTO,
             width: window.innerWidth,
             height: window.innerHeight,
@@ -16,7 +20,7 @@ const GameCanvas = () => {
                 default: 'arcade',
                 arcade: {
                     gravity: { y: 0 },
-                    debug: false
+                    debug: true
                 }
             },
             scene: {
@@ -58,6 +62,8 @@ const GameCanvas = () => {
 
 
         function create() {
+            this.add.rectangle(400, 300, 100, 100, 0xff0000); // a red box
+
             const map = this.make.tilemap({ key: 'map' });
 
             const tilesetSky = map.addTilesetImage('sky', 'sky');
@@ -204,7 +210,19 @@ const GameCanvas = () => {
 
             if (Phaser.Input.Keyboard.JustDown(spaceKey)) {
                 player.anims.play('select', true);
+
+                if (closest?.sprite === house1) {
+                    console.log('Entering House 1...');
+
+                    // 👇 Delay navigation just a tick to let Phaser unmount
+                    setTimeout(() => {
+                        game.destroy(true);      // ✅ destroy Phaser
+                        navigate('/room');       // ✅ then navigate
+                    }, 50); // 50ms is enough
+                }
             }
+
+
 
             console.log(`Player position: x=${player.x.toFixed(2)}, y=${player.y.toFixed(2)}`);
 
@@ -216,7 +234,7 @@ const GameCanvas = () => {
             ];
 
             let closest = null;
-            let minDistance = 120;
+            let minDistance = 60;
 
             houses.forEach(house => {
                 const dist = Phaser.Math.Distance.Between(player.x, player.y, house.sprite.x, house.sprite.y);
