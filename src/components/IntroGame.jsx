@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import bigButtonImage from '/assets/intro/big_button.png'; // Adjust path as needed
 
 const IntroGame = () => {
     const navigate = useNavigate();
@@ -9,6 +10,20 @@ const IntroGame = () => {
         setLoading(true);
         setTimeout(() => {
             navigate('/game');
+        }, 2000);
+    };
+
+    const handleShort = () => {
+        setLoading(true);
+        setTimeout(() => {
+            navigate('/view-cv');
+        }, 2000);
+    };
+
+    const handleCredit = () => {
+        setLoading(true);
+        setTimeout(() => {
+            navigate('/credits');
         }, 2000);
     };
 
@@ -28,7 +43,7 @@ const IntroGame = () => {
     return (
         <div style={styles.container}>
             <img
-                src="/assets/map/intro.png"
+                src="/assets/map/map.png"
                 alt="Map Background"
                 style={styles.background}
             />
@@ -36,14 +51,31 @@ const IntroGame = () => {
             <div style={styles.overlay} />
 
             <div style={styles.content}>
-                <h1 style={styles.title}>Welcome to My World</h1>
+                <h1 style={styles.title}>Welcome to My Gamefolio</h1>
                 <div style={styles.buttons}>
-                    <button onClick={handleStart}>Start</button>
-                    <button>Short Version</button>
-                    <button>Settings</button>
-                    <button>Credits</button>
-                    <button>🌞 / 🌜</button>
-                    <button>🎵</button>
+                    <button
+                        onClick={handleStart}
+                        style={styles.startButton}
+                    >
+                        {/* <span style={styles.buttonText}>Start</span> */}
+                    </button>
+
+                    <button
+                        onClick={handleShort}
+                        style={styles.Short}
+                    >
+                        <span style={styles.buttonText}>View CV</span>
+                    </button>
+
+                    <button
+                        onClick={handleCredit}
+                        style={styles.Short}
+                    >
+                        <span style={styles.buttonText}>Credits</span>
+                    </button>
+
+                    {/* <button>🌞 / 🌜</button>
+                    <button>🎵</button> */}
                 </div>
             </div>
         </div>
@@ -98,6 +130,47 @@ const styles = {
         display: 'flex',
         flexDirection: 'column',
         gap: '10px',
+    },
+    startButton: {
+        background: `url(/assets/intro/big_button.png) no-repeat`,
+        // Adjust these values based on your sprite sheet
+        backgroundPosition: '0 -30px', // Change to show different parts of sprite
+        width: '95px', // Set to the width of one sprite
+        height: '30px', // Set to the height of one sprite
+        border: 'none',
+        cursor: 'pointer',
+        padding: 0,
+        overflow: 'hidden',
+        position: 'relative',
+        transform: 'scale(2)', // 1.5x size (adjust as needed)
+        transformOrigin: 'center', // Ensures it scales from center
+        margin: '20px 0', // Add margin to prevent overlapping with other buttons
+    },
+
+    Short: {
+        background: `url(/assets/intro/big_button.png) no-repeat`,
+        // Adjust these values based on your sprite sheet
+        backgroundPosition: '0 0', // Change to show different parts of sprite
+        width: '95px', // Set to the width of one sprite
+        height: '30px', // Set to the height of one sprite
+        border: 'none',
+        cursor: 'pointer',
+        padding: 0,
+        overflow: 'hidden',
+        position: 'relative',
+        transform: 'scale(2)', // 1.5x size (adjust as needed)
+        transformOrigin: 'center', // Ensures it scales from center
+        margin: '20px 0', // Add margin to prevent overlapping with other buttons
+    },
+    buttonText: {
+        position: 'relative',
+        zIndex: 2,
+        color: '#b68962', // Your specified color
+        fontFamily: 'monospace',
+        fontSize: '16px',
+        // Optional additional styling:
+        textShadow: '0 1px 2px rgba(0,0,0,0.3)', // Adds subtle depth
+        transition: 'color 0.3s ease' // Smooth color transitions
     },
     loadingScreen: {
         display: 'flex',
