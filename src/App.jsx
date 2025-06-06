@@ -5,6 +5,8 @@ import * as Phaser from 'phaser';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import GameCanvas from './components/GameCanvas';
 import RoomScene from './components/RoomScene';
+import IntroGame from './components/IntroGame';
+
 
 import './App.css';
 
@@ -12,7 +14,8 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<GameCanvas />} />
+        <Route path="/" element={<IntroGame />} />
+        <Route path="/game" element={<GameCanvas />} />
         <Route path="/room" element={<RoomScene />} />
       </Routes>
     </Router>

@@ -1,0 +1,63 @@
+.loading-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    padding: 0 20px;
+    background: black;
+    color: black;
+    font-family: 'Courier New', monospace;
+    text-align: center;
+    width: 100vw;
+
+}
+
+.loading-container {
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+
+.loading-gif {
+    width: 500px;
+    height: auto;
+    margin-bottom: 20px;
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+}
+
+
+.loading-text {
+    font-size: 1.2rem;
+    animation: flicker 2s infinite;
+    color: white;
+}
+
+@keyframes flicker {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+}
+
+.loading-gif {
+    animation: floatIn 1.2s ease-in-out;
+}
+
+@keyframes floatIn {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}

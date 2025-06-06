@@ -5,20 +5,24 @@ import { setupAnuAnimations } from './hooks/useAnuAnimations';
 import { useNavigate } from 'react-router-dom';
 
 
-
-
 const RoomScene = () => {
 
     const navigate = useNavigate();
 
     useEffect(() => {
         const config = {
-            // type: Phaser.AUTO,
+            type: Phaser.AUTO,
             backgroundColor: '#37994c',
             // type: Phaser.AUTO,
             width: window.innerWidth,
             height: window.innerHeight,
             parent: 'room-container',
+            scale: {
+                mode: Phaser.Scale.RESIZE,
+                autoCenter: Phaser.Scale.CENTER_BOTH,
+                width: '100%',
+                height: '100%',
+            },
             physics: {
                 default: 'arcade',
                 arcade: {
@@ -114,7 +118,7 @@ const RoomScene = () => {
             cursors = this.input.keyboard.createCursorKeys();
             spaceKey = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE);
             this.cameras.main.startFollow(player, true, 0.1, 0.1);
-            this.cameras.main.setZoom(7);
+            this.cameras.main.setZoom(1);
             this.physics.world.setBounds(0, 0, map.widthInPixels, map.heightInPixels);
             player.setCollideWorldBounds(true);
 
@@ -125,18 +129,17 @@ const RoomScene = () => {
                 0, 0,
                 'Press W to go back',
                 {
-                    font: '5px monospace',
+                    font: '16px Arial',
                     fill: '#ffffff',
                     backgroundColor: '#000000aa',
-                    padding: { x: 8, y: 4 },
-                    resolution: 5
+                    padding: { x: 8, y: 4 }
                 }
             ).setScrollFactor(0).setDepth(1000).setVisible(false);
 
             this.time.delayedCall(0, () => {
                 instructionText.setPosition(
                     (this.cameras.main.width / 2) - (instructionText.width / 2),
-                    this.cameras.main.height - 490
+                    this.cameras.main.height - 40
                 );
 
                 instructionText.setVisible(true);
@@ -189,7 +192,7 @@ const RoomScene = () => {
         };
     }, []);
 
-    return <div id="room-container" className="w-full h-full" />;
+    return <div id="game-container" style={{ width: '100vw', height: '100vh' }} />;
 };
 
 export default RoomScene;

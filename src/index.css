@@ -2,21 +2,69 @@
 @tailwind components;
 @tailwind utilities;
 
+
+.loading-container {
+  opacity: 1;
+  transition: opacity 0.4s ease-out;
+}
+
+.loading-container.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
 html,
 body,
 #root,
 #game-container {
-  margin: 0;
-  padding: 0;
   width: 100vw;
   height: 100vh;
+  margin: 0;
+  padding: 0;
   overflow: hidden;
+  display: block;
+}
+
+
+#game-container {
+  opacity: 0;
+  transition: opacity 0.5s ease-in;
+}
+
+#game-container.loaded {
+  opacity: 1;
+}
+
+
+#game-container.hidden {
+  opacity: 0;
+  pointer-events: none;
+  z-index: -1;
+}
+
+#game-container.loaded {
+  opacity: 1;
+  transition: opacity 0.5s ease-in;
+  z-index: 0;
+}
+
+
+.loading-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #1d2c53;
+  z-index: 5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 body {
   margin: 0;
   padding: 0;
   background-color: #9bd4c3;
-  /* match your water tiles */
   overflow: hidden;
 }

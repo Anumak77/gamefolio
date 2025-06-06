@@ -1,0 +1,8 @@
+#game-container {
+    opacity: 0;
+    transition: opacity 0.5s ease-in;
+}
+
+#game-container.loaded {
+    opacity: 1;
+}
