@@ -87,47 +87,59 @@ By building this gamefolio, I demonstrate:
 
 ## Credits and Assets Used
 
+---
+
 ### Pixel Lands - Forest  
 **Author:** Trislin  
 - 16x16 tileset: terrain, fences, trees, paths, animated water, small details  
-- License: Free for commercial and non-commercial use. Redistribution/resale prohibited.  
-- Source: [Pixel Lands - Forest on Itch.io](https://trixel.itch.io/pixel-lands-forest)
+- **License:** Free for commercial and non-commercial use. Redistribution/resale prohibited.  
+- **Source:** [Pixel Lands - Forest on Itch.io](https://trixel.itch.io/pixel-lands-forest)
 
 ---
 
 ### Pixel Houses RPG - Animated Sprite Pack  
 **Author:** JellyBeam  
 - 16x16 animated houses used for world layout  
-- License: Free for commercial and non-commercial use. Redistribution/resale prohibited.  
-- Credit link available via author page
+- **License:** Free for commercial and non-commercial use. Redistribution/resale prohibited.  
+- **Credit link:** Available via author page
 
 ---
 
 ### Simple Sky Pixel Backgrounds  
 **Author:** Cania  
 - Day/night gradient skies with subtle star and moon details  
-- License: Creative Commons Attribution-NonCommercial 4.0 International  
-- Source: [Simple Sky Backgrounds on Itch.io](https://cania.itch.io/simple-sky-pixel-backgrounds)
+- **License:** Creative Commons Attribution-NonCommercial 4.0 International  
+- **Source:** [Simple Sky Backgrounds on Itch.io](https://cania.itch.io/simple-sky-pixel-backgrounds)
 
 ---
 
 ### City Builder Asset Pack  
 **Author:** Penzilla  
 - Used for props and buildings in town layout  
-- License: Royalty-free for personal and commercial use  
-- Source: [City Builder Asset Pack on Itch.io](https://penzilla.itch.io)
+- **License:** Royalty-free for personal and commercial use  
+- **Source:** [City Builder Asset Pack on Itch.io](https://penzilla.itch.io)
 
 ---
 
 ### Pixel Fantasy - Character Generator  
 **Author:** Caz (Cazwolf)  
 - Used to create the main player character sprite  
-- License: Free for commercial and non-commercial use  
-- Source: [www.cazwolf.com](https://www.cazwolf.com)  
-- Creator Profiles:  
+- **License:** Free for commercial and non-commercial use  
+- **Source:** [www.cazwolf.com](https://www.cazwolf.com)  
+- **Creator Profiles:**  
   - Itch.io: [cazwolf.itch.io](https://cazwolf.itch.io)  
   - Twitter/X: [@cazwolf](https://twitter.com/cazwolf)  
-  - Instagram: Cazokami
+  - Instagram: @Cazokami
+
+---
+
+### 64x64 Pixel Art Animations  
+**Author:** Axolotl Jim  
+- Animated pixel art used for environmental elements and effects  
+- **License:** Free for commercial and non-commercial use  
+- **Attribution:** Appreciated but not required  
+- **Source:** [64x64 Pixel Art Animations on Itch.io](https://axolotl-jim.itch.io/animations-64x64-pixel-art)
+
 
 ---
 

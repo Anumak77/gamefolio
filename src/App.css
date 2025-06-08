@@ -8,6 +8,11 @@ body,
   padding: 0;
 }
 
+#room-container:focus {
+  outline: none;
+}
+
+
 .logo {
   height: 6em;
   padding: 1.5em;

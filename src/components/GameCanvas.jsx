@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import * as Phaser from 'phaser';
-import spriteSheet from './../assets/sprite_sheet.png';
+import spriteSheet from '../../public/assets/sprite_sheet.png'
 import { useNavigate } from 'react-router-dom';
 import { setupAnuAnimations } from './hooks/useAnuAnimations';
 import LoadingPage from './common/LoadingPage';
